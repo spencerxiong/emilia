@@ -1,5 +1,6 @@
 import glob from 'glob'
 import path from 'path'
+import R from 'ramda'
 
 import Store from './store'
 import css from './css'
@@ -7,6 +8,15 @@ import io from './io'
 import lint from './lint'
 import log from './utils/log'
 import { Style, Image, Sprite } from './file'
+
+let trace = console.log.bind(console)
+
+// collect :: a -> [String]
+let collect = R.compose(trace, R.prop('src'))
+
+// pack
+
+// build
 
 class Emilia {
     constructor(options) {
